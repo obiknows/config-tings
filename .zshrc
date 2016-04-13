@@ -1,0 +1,1 @@
+/Users/samnnodim/.zprezto/runcoms/zshrc
