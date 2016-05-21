@@ -78,10 +78,12 @@ set number
 " Enable syntax highlighting
 "syntax on
 
-" Make tabs as wide as two spaces
-set tabstop=2
+" Tab settings
+set tabstop=2 shiftwidth=2 expandtab
+
 " number of spaces in tab when editing
 set softtabstop=2
+
 
 " SEARCH
 set incsearch           " search as characters are entered
@@ -122,11 +124,11 @@ set scrolloff=3
 
 " Strip trailing whitespace (,ss)
 function! StripWhitespace()
-	let save_cursor = getpos(".")
-	let old_query = getreg('/')
-	:%s/\s\+$//e
-	call setpos('.', save_cursor)
-	call setreg('/', old_query)
+  let save_cursor = getpos(".")
+  let old_query = getreg('/')
+  :%s/\s\+$//e
+  call setpos('.', save_cursor)
+  call setreg('/', old_query)
 endfunction
 noremap <leader>ss :call StripWhitespace()<CR>
 " Save a file as root (,W)
